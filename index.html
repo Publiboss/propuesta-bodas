@@ -101,7 +101,7 @@
             margin-bottom: 25px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.6);
             border: 3px solid var(--primary);
-            background-color: #000; /* Fondo negro por si el logo tiene transparencias */
+            background-color: #000; 
         }
 
         .title-slide h1 {
@@ -328,6 +328,86 @@
             object-fit: cover;
         }
 
+        /* --- SLIDE 5: PAGOS Y ENTREGAS --- */
+        .split-slide {
+            flex-direction: row;
+            padding: 0;
+            background: var(--white);
+        }
+
+        .split-left {
+            flex: 1;
+            background: url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1974&auto=format&fit=crop') center/cover;
+        }
+
+        .split-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .split-text {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .bold-text {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+
+        /* --- SLIDE 6 & 7: EXTRAS & LIMITACIONES --- */
+        .centered-slide {
+            align-items: center;
+            text-align: center;
+            padding: 80px 150px;
+            background: var(--bg-color);
+        }
+
+        .extras-grid {
+            display: grid;
+            gap: 35px;
+            font-size: 18px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+
+        .extras-price {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text-dark);
+            display: block;
+            margin-top: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .limitaciones-text {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--text-light);
+            text-align: justify;
+            text-align-last: center; /* Centra la última línea de cada párrafo */
+            margin-bottom: 25px;
+        }
+
     </style>
 </head>
 <body>
@@ -369,7 +449,7 @@
                 </div>
             </div>
             <div class="image-wrapper">
-                <!-- Aquí ya está tu archivo JPG enlazado correctamente y encuadrado hacia las manos -->
+                <!-- Tu foto de dron, encuadrada hacia las manos -->
                 <img src="DSC03520.jpg" alt="Equipo trabajando con dron" style="object-position: center 75%;">
             </div>
         </div>
@@ -457,6 +537,84 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- SLIDE 5: METODOLOGÍA Y ENTREGAS (Estilo Split) -->
+<div class="slide-container split-slide" id="slide5">
+    <!-- Imagen de referencia de manos con anillos. Si tienes una foto tuya, cambia el enlace aquí -->
+    <div class="split-left"></div>
+    
+    <div class="split-right">
+        <h2 class="serif-font section-title">Metodología de pago y Reserva</h2>
+        <p class="split-text">
+            Se realizará un abono del 50%<br>para agendar la fecha<br>
+            y el 50% restante antes de la fecha del evento.
+        </p>
+
+        <h2 class="serif-font section-title">Tiempos de entrega</h2>
+        <p class="split-text">
+            La entrega del material<br>se realizará en un plazo de:<br><br>
+            <span class="bold-text">20 - 30 DÍAS</span><br>
+            para fotos completas y video resumen largo.<br><br>
+            <span class="bold-text">10 - 15 DÍAS</span><br>
+            para el resumen corto y el reel tendencia.<br><br>
+            La entrega se realiza en formato digital.<br>
+            Se respaldarán los archivos hasta 2 meses.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 6: EXTRAS -->
+<div class="slide-container" id="slide6">
+    <div class="content-area centered-slide">
+        <h2 class="serif-font" style="font-size: 56px; margin-bottom: 50px; color: var(--text-dark);">Extras</h2>
+        
+        <div class="extras-grid">
+            <div>
+                Cobertura Hora Extra
+                <span class="extras-price">$100</span>
+            </div>
+            <div>
+                Edición de vídeo con mayor duración
+                <span class="extras-price">$60</span>
+            </div>
+            <div>
+                Drone por hora (Para paquete plata)
+                <span class="extras-price">$60</span>
+            </div>
+            <div style="margin-top: 20px;">
+                Viáticos Manabí (Fuera de Manta, Montecristi, Portoviejo)
+                <span class="extras-price">$50</span>
+            </div>
+            <div>
+                Viáticos GYE
+                <span class="extras-price">$200</span>
+            </div>
+            <div>
+                Viáticos UIO
+                <span class="extras-price">$350</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 7: LIMITACIONES -->
+<div class="slide-container" id="slide7">
+    <div class="content-area centered-slide">
+        <h2 class="serif-font" style="font-size: 56px; margin-bottom: 40px; color: var(--text-dark);">Limitaciones</h2>
+        
+        <p class="limitaciones-text">
+            El videógrafo está limitado por las reglas del lugar donde se lleve a cabo la ceremonia oficial y de boda. El cliente acuerda aceptar los resultados técnicos de esas imposiciones del lugar sobre el equipo audiovisual. La negociación con la(s) persona(s) encargada(s) de esas reglas para su alteración es responsabilidad del Cliente. El equipo solo ofrecerá sugerencias y recomendaciones técnicas o artísticas.
+        </p>
+        
+        <p class="limitaciones-text">
+            Aunque nuestro equipo intente hacer cada toma requerida específicamente por el cliente, este último entiende que una boda puede convertirse en una serie de limitaciones para un correcto uso profesional videográfico y fotográfico. Esto debido a problemas externos tales como: condiciones atmosféricas y climáticas cambiantes (lluvias, vientos fuertes, etc.), la luz natural y/o la iluminación que se encuentre disponible en la ceremonia, restricciones de tiempo, así como la cooperación de las personas involucradas directa e indirectamente.
+        </p>
+
+        <p class="limitaciones-text">
+            Debido a esto, Publiboss no puede garantizar que todas las tomas requeridas sean grabadas correcta y profesionalmente si ocurren estos imprevistos. De ser necesario, si existiera alguna disconformidad por parte del cliente sobre el trabajo, el equipo se limitará únicamente a ofrecer al cliente una segunda revisión de todo el material realizado. Por esta razón, el depósito, saldo total o parte del mismo no serán reembolsables aún si el cliente se encuentre en total disconformidad.
+        </p>
     </div>
 </div>
 
