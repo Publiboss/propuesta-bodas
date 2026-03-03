@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Bodas - Publiboss Manta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #D4AF37; /* Dorado clásico */
+            --primary-dark: #b5952f;
+            --bg-color: #FAF9F6; /* Blanco roto / Crema muy suave */
+            --text-dark: #1A1A1A; /* Gris casi negro */
+            --text-light: #555555; /* Gris medio para descripciones */
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e2e8f0;
+            display: grid;
+            gap: 40px;
+            place-items: center;
+            margin: 0;
+            padding: 40px 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: var(--bg-color);
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Tipografía Base */
+        h1, h2, h3, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .slide-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .slide-title::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .content-area {
+            flex-grow: 1;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- SLIDE 1: PORTADA --- */
+        .title-slide {
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.6);
+            border: 3px solid var(--primary);
+            background-color: #000; /* Fondo negro por si el logo tiene transparencias */
+        }
+
+        .title-slide h1 {
+            font-size: 85px;
+            letter-spacing: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .title-slide .subtitle {
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 6px;
+            margin-bottom: 40px;
+            color: #dddddd;
+        }
+
+        .title-slide .location {
+            position: absolute;
+            bottom: 50px;
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* --- SLIDE 2: VISIÓN --- */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            height: 100%;
+            align-items: center;
+        }
+
+        .vision-text {
+            font-size: 20px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+            background: var(--white);
+            padding: 25px 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-item i {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .feature-item h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 500px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- SLIDE 3: PAQUETES --- */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            height: 100%;
+            align-items: stretch;
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eaeaeb;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            position: relative;
+        }
+
+        .package-card.highlight {
+            border: 2px solid var(--primary);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+            transform: scale(1.03);
+            background-color: var(--white);
+            z-index: 10;
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--white);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .pkg-name {
+            font-size: 26px;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .pkg-price {
+            font-size: 42px;
+            color: var(--primary);
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pkg-list {
+            list-style: none;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .pkg-list li {
+            font-size: 15px;
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-light);
+        }
+
+        .pkg-list li i {
+            color: var(--primary);
+            font-size: 14px;
+            margin-top: 3px;
+        }
+
+        .pkg-list li .fa-xmark {
+            color: #cccccc;
+        }
+
+        /* --- SLIDE 4: PRE-BODA --- */
+        .pre-wedding-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            height: 100%;
+        }
+
+        .info-block {
+            margin-bottom: 35px;
+        }
+
+        .info-block h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-block p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .image-collage {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            height: 480px;
+        }
+
+        .image-collage .img-box {
+            border-radius: 16px;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .image-collage .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: PORTADA -->
+<div class="slide-container title-slide" id="slide1">
+    <!-- Aquí ya está tu archivo PNG enlazado correctamente -->
+    <img src="Auspicio (1080 x 1080 px) (4).png" alt="Logo Publiboss" class="logo-img">
+    <h1>Publiboss</h1>
+    <p class="subtitle">PROPUESTA AUDIOVISUAL DE BODAS</p>
+    <p class="location"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Manta, Ecuador</p>
+</div>
+
+<!-- SLIDE 2: NUESTRA VISIÓN -->
+<div class="slide-container" id="slide2">
+    <div class="content-area">
+        <h2 class="slide-title">El Equipo Ideal para su Gran Día</h2>
+        <div class="two-column">
+            <div class="text-content">
+                <p class="vision-text">
+                    No solo capturamos imágenes; preservamos el legado de su familia. Nuestro equipo está conformado por <b>dos profesionales dedicados exclusivamente a su evento</b>, garantizando una cobertura simultánea y perfecta de fotografía y cinematografía. Cada lágrima, cada sonrisa y cada detalle quedará inmortalizado con la más alta calidad y sensibilidad artística.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-camera"></i>
+                        <h3>Fotografía</h3>
+                        <p>Estilo Fine Art</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-clapperboard"></i>
+                        <h3>Cinematografía</h3>
+                        <p>Documental y Highlight</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <h3>Dron</h3>
+                        <p>Vistas Aéreas Únicas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <!-- Aquí ya está tu archivo JPG enlazado correctamente y encuadrado hacia las manos -->
+                <img src="DSC03520.jpg" alt="Equipo trabajando con dron" style="object-position: center 75%;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 3: PAQUETES DE BODA -->
+<div class="slide-container" id="slide3">
+    <div class="content-area">
+        <h2 class="slide-title">Nuestros Paquetes</h2>
+        <div class="packages-grid">
+            <!-- Paquete Plata -->
+            <div class="package-card">
+                <h3 class="pkg-name serif-font">Paquete Plata</h3>
+                <div class="pkg-price">$490</div>
+                <ul class="pkg-list">
+                    <li><i class="fa-solid fa-clock"></i> <b>8 Horas</b> de cobertura continua.</li>
+                    <li><i class="fa-solid fa-user-group"></i> <b>2 Profesionales</b> (1 Foto + 1 Video).</li>
+                    <li><i class="fa-solid fa-image"></i> <b>150+ Fotos</b> editadas en alta resolución.</li>
+                    <li><i class="fa-solid fa-film"></i> <b>Video Highlight</b> resumen (3-5 minutos).</li>
+                    <li><i class="fa-solid fa-xmark"></i> Sesión Pre-Boda no incluida.</li>
+                    <li><i class="fa-solid fa-xmark"></i> Tomas aéreas con dron no incluidas.</li>
+                </ul>
+            </div>
+
+            <!-- Paquete Oro -->
+            <div class="package-card highlight">
+                <div class="badge">LA MEJOR ELECCIÓN</div>
+                <h3 class="pkg-name serif-font">Paquete Oro</h3>
+                <div class="pkg-price">$790</div>
+                <ul class="pkg-list">
+                    <li><i class="fa-solid fa-heart"></i> <b>Sesión Pre-Boda (Save the Date) incluida.</b></li>
+                    <li><i class="fa-solid fa-clock"></i> <b>10 Horas</b> de cobertura (Arreglo a Fiesta).</li>
+                    <li><i class="fa-solid fa-location-crosshairs"></i> <b>Tomas Aéreas con Dron incluidas.</b></li>
+                    <li><i class="fa-solid fa-image"></i> <b>300+ Fotos</b> editadas de alta calidad.</li>
+                    <li><i class="fa-solid fa-film"></i> <b>Video Cinematográfico</b> largo (5-8 min).</li>
+                    <li><i class="fa-solid fa-mobile-screen"></i> <b>1 Reel Tendencia</b> para Redes Sociales.</li>
+                </ul>
+            </div>
+
+            <!-- Paquete Diamante -->
+            <div class="package-card">
+                <h3 class="pkg-name serif-font">Paquete Diamante</h3>
+                <div class="pkg-price">$1,290</div>
+                <ul class="pkg-list">
+                    <li><i class="fa-solid fa-heart"></i> Sesión Pre-Boda + Sesión Post-Boda.</li>
+                    <li><i class="fa-solid fa-clock"></i> <b>12 Horas</b> de cobertura total.</li>
+                    <li><i class="fa-solid fa-location-crosshairs"></i> Cobertura extendida con Dron.</li>
+                    <li><i class="fa-solid fa-image"></i> <b>500+ Fotos</b> editadas.</li>
+                    <li><i class="fa-solid fa-film"></i> <b>Video Documental</b> (15-20 min) + Reel.</li>
+                    <li><i class="fa-solid fa-book-open"></i> <b>Photobook Premium</b> impreso incluido.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 4: SESIÓN PRE-BODA -->
+<div class="slide-container" id="slide4">
+    <div class="content-area">
+        <h2 class="slide-title">Sesión "Save the Date"</h2>
+        <div class="pre-wedding-grid">
+            <div class="text-content" style="padding-top: 20px;">
+                <p style="font-size: 18px; color: var(--text-light); margin-bottom: 40px; line-height: 1.6;">
+                    Incluida en nuestro Paquete Oro, esta sesión es perfecta para perder el miedo a la cámara y obtener fotografías hermosas para sus invitaciones y recuerdos previos a la boda.
+                </p>
+                
+                <div class="info-block">
+                    <h3><i class="fa-solid fa-map-location-dot"></i> Locaciones Mágicas en Manta</h3>
+                    <p>Aprovechamos los mejores paisajes locales: Los acantilados y el Faro de San Lorenzo, la luz del Bosque de Pacoche o los hermosos atardeceres de Santa Marianita.</p>
+                </div>
+                
+                <div class="info-block">
+                    <h3><i class="fa-solid fa-stopwatch"></i> Entrega Express</h3>
+                    <p>Sabemos que necesitan estas fotos pronto. Les entregamos una selección editada en tan solo <b>5 días laborables</b> para que puedan diseñar sus invitaciones a tiempo.</p>
+                </div>
+            </div>
+            
+            <div class="image-collage">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop" alt="Pareja en la costa">
+                </div>
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop" alt="Atardecer en Santa Marianita">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
